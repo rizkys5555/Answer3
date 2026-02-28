@@ -1,0 +1,33 @@
+1: Create the R Markdown File
+In RStudio (or the Coursera Lab Sandbox), go to File > New File > R Markdown.... 
+A. Add the Date
+In the YAML header (the top section between ---), set the date to update automatically to the current date using an inline R expression: 
+yaml
+
+---
+title: "My Leaflet Map"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Use code with caution.
+B. Add the Leaflet Map
+Insert an R code chunk (Ctrl + Alt + I) and use the following code to create a basic interactive map: 
+r
+
+library(leaflet)
+my_map <- leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(lat=40.7488, lng=-73.9854, popup="Empire State Building")
+my_map
+
+Use code with caution.
+2: Generate the HTML
+Click the Knit button in RStudio. This will run the code and save a file named yourfilename.html on your computer (or in the sandbox). 
+3: Host Your Webpage
+The assignment requires you to host this file on one of three platforms: 
+
+    RPubs: This is the easiest method. In the RStudio preview window, click the Publish button and select RPubs.
+    GitHub Pages: Create a public repository, upload your HTML file (renamed to index.html), and enable GitHub Pages in the repository settings.
+    NeoCities: Create a free account and upload your HTML file directly to their web interface. 
